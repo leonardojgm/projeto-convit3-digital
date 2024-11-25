@@ -13,7 +13,7 @@ GET http://localhost:4000/eventos/7wt3sji6md3-odl50e2qce-hnnq54t6idu
 GET http://localhost:4000/eventos/xdlhnq5lwm-esmllp6nie-hzgl0ajulz7
 
 ###
-GET http://localhost:4000/eventos/validar/evento-fullstack-2025/2kis8yvhcvv-8um289gg1x5-zw08j0ciytk
+GET http://localhost:4000/eventos/validar/aniversario-joao/2kis8yvhcvv-8um289gg1x5-zw08j0ciytk
 
 ###
 POST http://localhost:4000/eventos/acessar

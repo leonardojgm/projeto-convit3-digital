@@ -38,7 +38,7 @@ export class EventosController {
 
     @Post('acessar')
     async acessarEvento(@Body() dados: { id: string, senha: string }) {
-        const evento = await this.repo.buscarPorId(dados.id);   
+        const evento = await this.repo.buscarPorId(dados.id, true);   
         // const evento = eventos.find((evento) => evento.id === dados.id && evento.senha === dados.senha);
 
         if (!evento) throw new HttpException('Evento não encontrado.', 404);
@@ -72,10 +72,10 @@ export class EventosController {
 
     @Get('validar/:alias/:id')
     async validarAlias(@Param('alias') alias: string, @Param('id') id: string) {
-        const evento = await this.repo.buscarPorAlias(alias);    
+        const evento = await this.repo.buscarPorAlias(alias);  
         // const evento = eventos.find((evento) => evento.alias === alias);
 
-        return { valid: !evento || evento.id === id };
+        return { valido: !evento || evento.id === id };
     }	
 
     private serializar(evento: Evento) {
