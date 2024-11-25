@@ -1,5 +1,13 @@
 import { StyleSheet } from "react-native";
-import { alignCenter, bgBlue600, flexRow, gapX2, justifyCenter, px4, py2, roundedMd } from "./utility";
+import {
+  bgBlue600,
+  flexRow,
+  gapX2,
+  justifyCenter,
+  px4,
+  py2,
+  roundedMd,
+} from "./utility";
 
 const style = StyleSheet.create({
   centerGrow: {
@@ -11,7 +19,6 @@ const style = StyleSheet.create({
     columnGap: gapX2.columnGap,
     flexDirection: flexRow.flexDirection,
     justifyContent: justifyCenter.justifyContent,
-    alignItems: alignCenter.alignItems,
     paddingHorizontal: px4.paddingHorizontal,
     paddingVertical: py2.paddingVertical,
     borderRadius: roundedMd.borderRadius,

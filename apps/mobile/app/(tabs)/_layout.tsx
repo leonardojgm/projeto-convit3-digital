@@ -8,16 +8,20 @@ export default function TabsLayout() {
       headerShown: false,
       tabBarLabel: label,
       tabBarActiveTintColor: colors.blue[500],
-      tabBarLabelStyle: { fontSize: 10, fontWeight: "bold" },
+      tabBarLabelStyle: { fontSize: 12, fontWeight: "bold" },
       tabBarInactiveTintColor: colors.zinc[400],
       tabBarStyle: {
         backgroundColor: colors.zinc[950],
         borderTopWidth: 0,
       },
       tabBarIcon: ({ focused }: any) => (
-        <AntDesign name={icone as any} size={24} color={focused ? colors.blue[500] : colors.zinc[400]} />
-      )
-    }
+        <AntDesign
+          name={icone as any}
+          size={24}
+          color={focused ? colors.blue[500] : colors.zinc[400]}
+        />
+      ),
+    };
   }
 
   return (

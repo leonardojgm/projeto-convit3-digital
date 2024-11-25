@@ -1,11 +1,10 @@
-import EventoCard from "@/components/evento/EventoCard";
-import NovoEvento from "@/components/evento/NovoEvento";
-import SemEventos from "@/components/evento/SemEventos";
-import useEventos from "@/data/hooks/useEventos";
-import { p4, bgBlack, flex1, gapY4, py8, alignCenter, bgRed500 } from "@/style";
-import { useRouter } from "expo-router";
-import React from "react";
+import { alignCenter, bgBlack, flex1, gapY4, p4, py8 } from "@/style";
 import { Pressable, SafeAreaView, ScrollView } from "react-native";
+import { useRouter } from "expo-router";
+import EventoCard from "@/components/evento/EventoCard";
+import useEventos from "@/data/hooks/useEventos";
+import SemEventos from "@/components/evento/SemEventos";
+import NovoEvento from "@/components/evento/NovoEvento";
 
 export default function TelaEventos() {
   const { eventos } = useEventos();
@@ -16,12 +15,15 @@ export default function TelaEventos() {
       {eventos.length === 0 && <SemEventos />}
       <ScrollView contentContainerStyle={[gapY4, py8, alignCenter]}>
         {eventos.map((evento) => (
-          <Pressable key={evento.id} onPress={() => router.push(`/eventos/${evento.id}`)}>
-            <EventoCard key={evento.id} evento={evento} />
+          <Pressable
+            key={evento.id}
+            onPress={() => router.push(`/eventos/${evento.id}`)}
+          >
+            <EventoCard evento={evento} />
           </Pressable>
         ))}
+        <NovoEvento />
       </ScrollView>
-      <NovoEvento />
     </SafeAreaView>
   );
 }

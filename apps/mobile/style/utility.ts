@@ -22,7 +22,6 @@ const style = StyleSheet.create({
   gapY1: { rowGap: 4 },
   gapY2: { rowGap: 8 },
   gapY4: { rowGap: 16 },
-  hFull: { height: "100%" },
   itemsCenter: { alignItems: "center" },
   itemsStretch: { alignItems: "stretch" },
   justifyCenter: { justifyContent: "center" },
@@ -76,7 +75,6 @@ export const gapX4 = style.gapX4;
 export const gapY1 = style.gapY1;
 export const gapY2 = style.gapY2;
 export const gapY4 = style.gapY4;
-export const hFull = style.hFull;
 export const itemsCenter = style.itemsCenter;
 export const itemsStretch = style.itemsStretch;
 export const justifyCenter = style.justifyCenter;

@@ -1,21 +1,25 @@
-import { ArgumentsHost, Catch, ExceptionFilter } from "@nestjs/common";
-import { Request, Response } from "express";
+import { ArgumentsHost, Catch, ExceptionFilter } from '@nestjs/common';
+import { Request, Response } from 'express';
 
-@Catch(Error) 
+@Catch(Error)
 export default class ErroFilter implements ExceptionFilter {
-    catch(exception: any, host: ArgumentsHost) {
-        const ctx = host.switchToHttp();
-        const request = ctx.getRequest<Request>();
-        const response = ctx.getResponse<Response>();
-        const status: number = (exception as any).getStatus ? (exception as any).getStatus() : 500;
+  catch(exception: Error, host: ArgumentsHost) {
+    const ctx = host.switchToHttp();
 
-        console.error(exception);
+    const request = ctx.getRequest<Request>();
+    const response = ctx.getResponse<Response>();
 
-        response.status(status).json({ 
-            statusCode: status,
-            timestamp: new Date().toISOString(),
-            path: request.url,
-            message: exception.message, 
-        });
-    }
+    const status = (exception as any).getStatus
+      ? (exception as any).getStatus()
+      : 500;
+
+    console.error(exception);
+
+    response.status(status).json({
+      statusCode: status,
+      timestamp: new Date().toISOString(),
+      path: request.url,
+      messagem: exception.message,
+    });
+  }
 }

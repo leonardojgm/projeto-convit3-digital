@@ -4,8 +4,8 @@ import { DbModule } from 'src/db/db.module';
 import { EventoPrisma } from './evento.prisma';
 
 @Module({
-    imports: [DbModule],
-    controllers: [EventosController],
-    providers: [EventoPrisma],
-  })
+  imports: [DbModule],
+  controllers: [EventosController],
+  providers: [EventoPrisma],
+})
 export class EventosModule {}
